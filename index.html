@@ -40,9 +40,54 @@
       background: linear-gradient(90deg, transparent, rgba(191,0,255,0.65), transparent);
       filter: blur(0.5px) drop-shadow(0 6px 12px var(--glow));
     }
+
+    .lead{
+      margin: 18px 0 6px;
+      font-size: clamp(14px, 2.6vw, 18px);
+      color: #6a4fb4;
+      font-weight: 600;
+    }
+    .nutrients{
+      margin: 0;
+      padding: 16px 22px;
+      list-style: none;
+      background: #faf5ff;
+      border: 1px solid #ead8ff;
+      border-radius: 14px;
+      box-shadow: 0 6px 24px rgba(170,0,255,0.12);
+    }
+    .nutrients li{
+      margin: 8px 0;
+      font-size: clamp(14px, 2.6vw, 18px);
+      color: #3a2a5e;
+    }
+    .nutrients li::before{
+      content: "•";
+      color: #8a2be2;
+      margin-right: 10px;
+    }
+
+    .promo{
+      margin-top: 14px;
+      font-size: clamp(16px, 3vw, 22px);
+      color: #6a4fb4;
+      font-weight: 700;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <h1>Beauty of Corn</h1>
+  <p class="lead">Kukurūza sevī ietver:</p>
+  <ul class="nutrients" aria-label="Kukurūzas uzturvielu saraksts">
+    <li>B vitamīni</li>
+    <li>E vitamīns</li>
+    <li>K vitamīns</li>
+    <li>Magnijs</li>
+    <li>Kālijs</li>
+  </ul>
+  <p class="promo">Jau drīz kukurūza darīs tevi skaistāku!</p>
+  <img src="corn.png" alt="Corn Image"/>
+  
 </body>
 </html>
