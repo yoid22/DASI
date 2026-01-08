@@ -6,18 +6,37 @@
   <title>Beauty of Corn</title>
   <style>
     :root{
-      --violet-1:#7f00ff;
-      --violet-2:#b300ff;
-      --violet-3:#e100ff;
-      --glow: rgba(170,0,255,0.35);
+      --corn-yellow-1:#ffd700;
+      --corn-yellow-2:#ffed4e;
+      --corn-yellow-3:#fffacd;
+      --corn-green:#228b22;
+      --corn-purple:#8a2be2;
+      --glow: rgba(255,215,0,0.35);
+      --purple-glow: rgba(138,43,226,0.35);
+    }
+    @keyframes cornGlow {
+      0%, 100% { filter: drop-shadow(0 8px 20px var(--glow)); }
+      50% { filter: drop-shadow(0 12px 30px rgba(255,215,0,0.6)); }
     }
     html,body{height:100%}
     body{
       margin:0;
       display:grid;
       place-items:center;
-      background:#ffffff;
+      background: linear-gradient(135deg, var(--corn-yellow-3) 0%, #ffffff 100%);
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+    body::before{
+      content:"";
+      position: fixed;
+      right: 2vw;
+      bottom: 2vh;
+      width: min(38vw, 420px);
+      height: min(38vw, 420px);
+      background: url('corn.png') center/contain no-repeat;
+      opacity: 0.12;
+      pointer-events: none;
+      filter: drop-shadow(0 10px 30px rgba(255,215,0,0.25));
     }
     h1{
       font-weight:800;
@@ -25,10 +44,8 @@
       margin:0;
       text-align:center;
       letter-spacing:0.02em;
-      background: linear-gradient(92deg, var(--violet-1) 0%, var(--violet-2) 50%, var(--violet-3) 100%);
-      -webkit-background-clip:text; background-clip:text;
-      -webkit-text-fill-color:transparent; color: transparent;
-      filter: drop-shadow(0 8px 20px var(--glow));
+      color: var(--corn-purple);
+      text-shadow: 0 8px 22px var(--purple-glow);
     }
     h1::after{
       content:"";
@@ -37,7 +54,7 @@
       width:min(420px,60vw);
       margin:16px auto 0;
       border-radius:999px;
-      background: linear-gradient(90deg, transparent, rgba(191,0,255,0.65), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255,215,0,0.65), transparent);
       filter: blur(0.5px) drop-shadow(0 6px 12px var(--glow));
     }
 
@@ -87,7 +104,12 @@
     <li>Kālijs</li>
   </ul>
   <p class="promo">Jau drīz kukurūza darīs tevi skaistāku!</p>
-  <img src="corn.png" alt="Corn Image"/>
+  <img src="corn.png" alt="Corn Image" style="max-width: 300px; height: auto; border-radius: 10px; box-shadow: 0 8px 20px rgba(255,215,0,0.3); transition: transform 0.3s ease;"/>
+  <style>
+    img:hover {
+      transform: scale(1.05);
+    }
+  </style>
   
 </body>
 </html>
